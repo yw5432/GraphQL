@@ -95,35 +95,6 @@ query {
      "query": "query { getUserById(userId: 1) { id username email } }"
    }
    ```
-
-### With Apollo Client
-Install Apollo Client:
-```bash
-npm install @apollo/client graphql
-```
-
-Example integration:
-```javascript
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'http://127.0.0.1:8000/graphql',
-  cache: new InMemoryCache(),
-});
-
-client.query({
-  query: gql`
-    query {
-      getUserById(userId: 1) {
-        id
-        username
-        email
-      }
-    }
-  `
-}).then(response => console.log(response.data));
-```
-
 ---
 
 ## Troubleshooting
